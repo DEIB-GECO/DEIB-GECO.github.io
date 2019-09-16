@@ -1,1 +1,1 @@
-# DEIB-GECO.github.io
+# GitHub page deib-geco.github.io
