@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <title>GenoMetric Query Language</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-33687213-3', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+        <div id="conteneur">
+            <div id="header"><b>Federated GMQL</b><br><i>GenoMetric Query Language</i></div>
+
+            <div id="haut">
+                <ul class="menuhaut">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="supplementary.html">Supplementary</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="download.html">Download</a></li>
+                </ul>
+            </div>
+
+            <div id="centre">
+                <h1>Download </h1>
+                <p>GMQL software freely available. Downloads to GNU/Linux systems:</p>
+
+
+                <ul>
+                    <!--<a href="packages/GMQLPackage-1.0.1.tar.gz">Download</a> <b>GMQL <i>(old version)</i></b> v.1.0.1 (122 MB) shell version - <i>Local</i> or <i>MapReduce</i> mode (over <a href="http://hadoop.apache.org/" target="Hadoop">Apache Hadoop</a>) for GNU/Linux systems
+-->
+                    </li>
+                <!--  <li><i>Local</i> mode or <i>MapReduce</i> mode (over Hadoop 1) for GNU/Linux systems - <a href="packages/GMQLPackage-1.0.0.tar.gz">Download</a> (122 MB)</li> -->
+                <!--  <li><i>Local</i> mode + <i>MapReduce</i> mode (over Hadoop 2) - soon available</li> -->
+
+                <!--<li><a href="packages/GMQLPackage-1.2.tar.gz">Download</a> <b>GMQL <i>(old version)</i></b> v.1.2 - <i>old version</i> (122 MB) shell version - <i>Local</i> or <i>MapReduce</i> mode (over <a href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html" target="Hadoop2">Apache Hadoop YARN</a>, Hadoop 2.x) for GNU/Linux systems</li>-->
+                <!--<li><a href="packages/GMQL-services.war">Download</a> <b>GMQL Services <i>(old version)</i></b> - <i>old version</i> (60 MB) <i>Web Service version</i> - <i>Local</i> or <i>MapReduce</i> mode (over <a href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html" target="Hadoop2">Apache Hadoop YARN</a>, Hadoop 2.x) for application server (tested on <a href="http://tomcat.apache.org/" target="Tomcat">Apache Tomcat 7</a> with Java 7) on GNU/Linux systems</li>-->
+
+                <li><a href="packages/GMQLPackage-1.0.1.tar.gz">GMQL Version 1.0.1</a> over Apache Hadoop 1.x</a>
+            <br><br>
+            <li><a href="packages/GMQLPackage-1.2.tar.gz">GMQL Version 1.1.2</a> over  Apache Hadoop 2.x with YARN</li>
+            <li><a href="packages/GMQL-services.war">GQML Services</a> over  Apache Hadoop 2.x with YARN, tested on Apache Tomcat 7 with Java 7.</li>
+
+            </ul>
+
+
+        <!--<p>GMQL software is freely available to non-commercial users.</p>-->
+
+
+        <p><br></p>
+
+        <p>Please refer to: </p>
+        <ul>
+            <li> <a href="doc/GMQL_Quick_Start.pdf" target="_blank">GMQL Quick Start</a> for <b>GMQL</b> <!--  toolkit--> installation</li>
+
+            <li> <a href="doc/GMQL_Tutorial.pdf" target="_blank">GMQL Tutorial</a> for datasets and data sample management and for a step-by-step explanation of a typical GMQL query.</li>
+
+            <!-- <li> <a href="doc/GMQL_Quick_Start.pdf" target="_blank">GMQL Services Quick Start</a> for <b>GMQL Web Services</b> installation.</li>
+-->
+
+            <li> <a href="doc/GMQL_Services.pdf" target="_blank">GMQL Services</a> for <b>GMQL services</b>.documentation and usage.</li>
+        </ul>
+
+
+        <p><br></p>
+        <p><b>GMQL Services installation</b></p>
+
+        <p>To install the GMQL Web Services, please orderly do the following:</p>
+        <ul>
+            <li>Install the GMQL shell version v.1.2</li>
+            <li>If not installed, install the <a href="http://tomcat.apache.org/" target="Tomcat">Apache Tomcat 7</a> server</li>
+            <li>Add the file <a href="packages/setenv.sh" target="_blank">setenv.sh</a> (without renaming it) to the <code><font size="3">$TOMCAT_HOME/bin/</font></code> location (e.g. <i>/usr/share/tomcat7/bin/</i>).</li>
+
+            <li>Update the content of the <i>setenv.sh</i> file by setting the contained environment variables to their same value used to configure the installation of the GMQL shell version (see <a href="doc/GMQL_Quick_Start.pdf" target="_blank">GMQL Quick Start</a>)</li>
+
+            <li>Change the permissions on the <i>setenv.sh</i> file to make it executable, e.g. by executing the command:<br> <code><font size="3">chmod +x /usr/share/tomcat7/bin/setenv.sh</font></code>
+
+
+                <!-- <li>In order for the GMQL Web Services to be able to create users in the repository configured during installation and manage execution, the Tomcat user (usually tomcat7) should either own the configured repository folder (e.g. <i>/home/gmql_repository/</i>) or have the privileges to read and write on it; to do so:<br>
+-->
+            <li>In order for the GMQL Web Services to manipulate the repository configured during installation, the user that executes Tomcat Server (e.g. tomcat7) must have full access (read, write and execution privileges) to the repositorys folder (e.g. <i>/home/gmql_repository/</i>). The user should be either owner of the folder, or be a member of the folders group; the latter one could be done with the scripts below:<br>
+                <ul>
+                    <li>Add the tomcat user (e.g. tomcat7) to the same group (e.g. hadoop) of the repository folder owner, using the command: <br><code><font size="3">sudo usermod -a -G hadoop tomcat7</font></code></li>
+                    <li>Give permissions to the group (e.g. hadoop) to read and write on the repository folder, using the command: <br><code><font size="3">sudo chmod -R 775  /home/gmql_repository/</font></code></li>
+                </ul>
+            </li>
+
+            <li>Restart the Apache Tomcat 7 server with the following command: <code><font size="3">sudo service tomcat7 restart</font></code></li>
+            <!-- <li>Extract the GMQL services war file (<i>gmql-services.war</i>) from the downloaded compressed <i>gmql-services.tar</i> file</li> -->
+            <li>Upload the GMQL services war file using the Apache Tomcat 7 manager webpage.</li>
+        </ul>
+
+
+
+
+        <p><br><br></p>
+        <p>The provided GMQL packages (both v.1.0.1 and v.1.2) include four <b>example GMQL queries</b> addressing some typical <b>biological use cases</b>, such as:</p>
+        <ol>
+            <li>Finding ChIP-seq peaks in promoter regions</li>
+            <li>Finding distal bindings in transcription regulatory regions</li>
+            <li>Associating transcriptomics and epigenomics</li>
+            <li>Finding somatic mutations in exons</li>
+        </ol>
+
+        <p></p>
+        <p>The packages include also a few small-scale datasets with data and metadata from the <a href="https://www.encodeproject.org/" target="ENCODE">ENCODE</a> and <a href="http://cancergenome.nih.gov/" target="TCGA">TCGA</a> projects, which we provide just for testing the examples and demonstrate the power and flexibility of GMQL at work in a rich set of biological use cases.</p>
+
+        <p>Note that GMQL is designed for <b>cloud computing</b> processing of <b>big data</b> in the <a href="http://hadoop.apache.org/" target="Hadoop">Hadoop</a> framework (i.e. when used in <i>MapReduce</i> mode).<br>
+            It shows its assets in particular when it is applied on numerous data samples with many genomic regions and of multiple data types, in order to identify their genomic regions that satisfy given distance constrains.</p>
+
+        <p>GMQL can be used also with small data and on non-parallel computing frameworks (i.e. when used in <i>Local</i> mode); in these cases other available tools may show much shorter running times, but then they fail on massive data.</p>
+
+
+        <p><br></p>
+        <h3>Run examples in two clicks</h3>
+
+        <p>Within the packages we include two shortcut commands to enable also first-time GMQL users to quickly execute in <i>Local</i> mode the provided examples and see their results.</p>
+
+        <p><b>First click</b>: After GMQL installation (see <a href="doc/GMQL_Quick_Start.pdf" target="_blank">GMQL Quick Start</a>), before running the four provided examples, the datasets used as input in the examples must be created using the data in the folder <code><font size="3">GMQLPackage/EXAMPLES/data/</font></code>. To do so, execute: <code><font size="3">./GMQLPackage/EXAMPLES/createInputDataSets.sh</font></code>
+            <br>
+            This makes the following four input datasets available in your GMQL user account:
+        <blockquote>
+            HG19_ANN<br>
+            HG19_MUT<br>
+            HG19_PEAK<br>
+            HG19_RNA<br>
+        </blockquote>
+        </p>
+
+
+    <p><b>Second click</b>: To run all together the four example GMQL queries, execute: <code><font size="3">./GMQLPackage/EXAMPLES/runScriptExamples.sh</font></code>
+        <br>
+        After the execution finishes (few seconds), all generated result datasets are shown in the print out:
+    <blockquote>
+        PROM_HM_TF<br>
+        TF_res<br>
+        Genome_space<br>
+        Exon_res<br>
+    </blockquote>
+    </p>
+
+<p>Each GMQL example materializes only one dataset; so, in total four output datasets, one for each example, are generated in the GMQL repository. From there, their data files can be extracted and placed in a user local folder for their use outside GMQL; this can be done by executing the following command (see Section 1.5 of the <a href="doc/GMQL_Tutorial.pdf" target="_blank">GMQL Tutorial</a>):<br>
+    <code><font size="3">repositoryManagerV1 CopyDSToLocal &lt;DatasetName&gt; &lt;DestinationLocalFolder&gt;</font></code>
+    <!--  For easiness, the provided runScriptExamples.sh shorcut makes the sample data and metadata files generated by the for examples directly available in your GMQL user account within the folder <code><font size="3">GMQLPackage/EXAMPLES/results/</font></code>. -->
+</p>
+
+<p>Thanks to the standard data formats used, both input data samples and generated results can be directly loaded in a Genome Browser (e.g. <a href="http://genome.ucsc.edu/cgi-bin/hgGateway"  target="UCSC_GB">UCSC Genome Browser</a>, <a href="http://bioviz.org/igb/" target="IGB">Integrated Genome Browser</a> (IGB), or <a href="http://www.broadinstitute.org/igv/" target="IGV">Integrative Genomics Viewer</a> (IGV)) for their easy visualization, browsing and evaluation.
+</p>
+
+</div>
+<div id="pied"></div>
+</div>
+</body>
+</html>
