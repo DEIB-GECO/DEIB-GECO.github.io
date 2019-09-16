@@ -1,106 +1,118 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html>
-    <head>
-        <title>GenoMetric Query Language</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
-        <link rel="stylesheet" href="assets/css/styles.css" />
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	<head>
+		<title>GMQL System</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-15" />
+		<link rel="stylesheet" href="styles.css" />
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-33687213-3', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <script>
-            var httpRequest;
-            function makeRequest(url) {
-                if (window.XMLHttpRequest) {
-                    httpRequest = new XMLHttpRequest();
-                } else if (window.ActiveXObject) {
-                    try {
-                        httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
-                    }
-                    catch (e) {
-                        try {
-                            httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-                        }
-                        catch (e) {}
-                    }
-                }
-                if (!httpRequest) {
-                    alert('Giving up :( Cannot create an XMLHTTP instance');
-                    return false;
-                }
-                httpRequest.onreadystatechange = processResponse;
-                httpRequest.open('GET', url);
-                httpRequest.send();
-            }
-            function processResponse() {
-                if (httpRequest.readyState === 4) {
-                    if (httpRequest.status === 200) {
-                        console.info('[Analytics] Response: ' + httpRequest.responseText);
+			ga('create', 'UA-33687213-3', 'auto');
+			ga('send', 'pageview');
+		</script>
+		<script>
+			  var httpRequest;
+			  function makeRequest(url) {
+				if (window.XMLHttpRequest) {
+				  httpRequest = new XMLHttpRequest();
+				} else if (window.ActiveXObject) {
+				  try {
+					httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+				  }
+				  catch (e) {
+					try {
+					  httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+					catch (e) {}
+				  }
+				}
+				if (!httpRequest) {
+				  alert('Giving up :( Cannot create an XMLHTTP instance');
+				  return false;
+				}
+				httpRequest.onreadystatechange = processResponse;
+				httpRequest.open('GET', url);
+				httpRequest.send();
+			  }
+			  function processResponse() {
+				if (httpRequest.readyState === 4) {
+				  if (httpRequest.status === 200) {
+					console.info('[Analytics] Response: ' + httpRequest.responseText);
 
-                        var response = JSON.parse(httpRequest.responseText);
-                        if (response) {
-                            var numberOfVisits = response["GMQL-ONLY"].visits[0];
-                            console.info('[Analytics] Total Visits: ', numberOfVisits);
-                            var canvas = document.getElementById('visit_count');
-                            var nVisitors = document.createElement('span');
+					var response = JSON.parse(httpRequest.responseText);
+					if (response) {
+						var numberOfVisits = response["GMQLSystem"].visits[0];
+						console.info('[Analytics] Total Visits: ', numberOfVisits);
+						var canvas = document.getElementById('visit_count');
+						var nVisitors = document.createElement('span');
 
-                            //var sum = parseFloat(numberOfVisits) + (+'10000');
+						//var sum = parseFloat(numberOfVisits) + (+'10000');
 
-                            nVisitors.innerHTML = 'Number of visits: ' + numberOfVisits;
-                            canvas.appendChild(nVisitors);
-                        } else {
-                            console.warn('[Analytics] No results found');
-                        }
-                    } else {
-                        console.error('There was a problem with the request.');
-                    }
-                }
-            }
-        </script>
-    </head>
-    <body>
-        <div id="conteneur">
-            <div id="header"><b>Federated GMQL</b><br><i>GenoMetric Query Language</i></div>
+						nVisitors.innerHTML = 'Number of visits: ' + numberOfVisits;
+						canvas.appendChild(nVisitors);
+					} else {
+						console.warn('[Analytics] No results found');
+					}
+				  } else {
+					console.error('There was a problem with the request.');
+				  }
+				}
+			  }
+		</script>
+	</head>
+	<body>
+		<div id="conteneur">
+	    <div id="header"><b>Federated GMQL</b><br><i>GenoMetric Query Language System</i></div>
 
-            <div id="haut">
-                <ul class="menuhaut">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="video.html">Video</a></li>
-                    <li><a href="supplementary.html">Supplementary</a></li>
-                    <li><a href="documentation.html">Documentation</a></li>
-                    <li><a href="download.html">Download</a></li>
-                </ul>
-            </div>
+		<div id="haut">
+			<ul class="menuhaut">
+				<li><a href="index.html"><b>Home</b></a></li>
 
-            <div id="centre">
-                <h1>GenoMetric Query Language (GMQL)</h1>
-                <p>Next Generation Sequencing (NGS) technologies are producing data at increasing speed and reducing costs, therefore managing NGS data is quickly becoming the biggest "big data" problem of mankind. In this context, GMQL provides a next-generation query language for querying NGS data.</p>
+				<li><a href="about.html">About</a></li> 
+                <li><a href="video.html">Video</a></li>
+				<li><a href="accesses.html">Accesses</a></li>
 
-                <p>The <b>GenoMetric Query Language</b> operates upon aligned genomic data in a variety of data formats; it provides parallel computation in the cloud, thereby supporting queries over thousands of samples, such as the ones provided by <a href="https://www.encodeproject.org/" target="ENCODE">ENCODE</a> and <a href="http://cancergenome.nih.gov/" target="TCGA">TCGA</a> consortia. The language's name indicates its ability to compute massive operations on genomic regions, which take into account region relative positions and distances.</p>
-
-                <p>GMQL can be used independently or within <!-- a framework called <b>GenData 2020</b>, --> a server-based architecture based on <a href="http://hadoop.apache.org/" target="Hadoop">Apache Hadoop</a> and <a href="http://pig.apache.org/" target="Pig">Apache Pig</a> which runs on cloud-based systems and has several components, including an orchestrator and a language compiler<!--, an input browser and an output viewer -->. In the GMQL toolkit, it is possible to download a   GMQL implementation <!-- subset of the GenData 2020 system --> and run GMQL queries, either "locally" or within a Hadoop Distributed File System.</p>
-
-                <p>GMQL is supported by the PRIN project <a href="http://www.bioinformatics.deib.polimi.it/genData/" target="GenData2020">GenData 2020</a>.</p>
-
-                <p><br>GMQL potential can be tested <a href="http://www.bioinformatics.deib.polimi.it/GMQL/queries" target="GMQLservices">here</a> through a set of predefined parametric queries on <a href="https://www.encodeproject.org/" target="ENCODE">ENCODE</a> and <a href="http://www.roadmapepigenomics.org/" target="Epigenome">Epigenomics Roadmap</a> data.</p>
+				<li><a href="documentation.html">Documentation</a></li>
 
 
-                <br>
-                <p>Newer enhanced version of GMQL is available <a href="..\GMQLsystem\" target="GMQLsystem">here</a>.</p>
+				<li><a href="download.html">Download</a></li>
+				<li><a href="publications.html">Publications</a></li>
+<!--				<li><a href="group.html">Group</a></li>
+-->				<li><a href="contacts.html">Contacts</a></li>
+			</ul>
+		</div>
+		  <div id="centre">
+			<h1>GMQL System</h1>
+			<p>The GenoMetric Query Language (GMQL) system is a novel high-throughput computational software for multi-sample integration and processing of big heterogeneous datasets of genomic features and known annotations from Next Generation Sequencing.</p>
 
-                <br><br>
-                <p id="visit_count"/>
+			<p>Meeting efficiency, flexibility and usability requirements, it can operate on large amounts of heterogeneous genomic region data in their usual formats, and can compare billions of genomic regions, mainly on the basis of metric properties but also of arbitrary region attributes and of metadata content, with enhanced accessibility, portability, scalability and performance.</p>
 
-            </div>
-            <div id="pied"></div>
-        </div>
-        <script type='text/javascript'>makeRequest('/AnalyticsQueryWrapper/AnalyticsServlet');</script>
+			<p>All its implemented features (see <a href="about.html" target="about">About</a>) make the GMQL system an easy-to-use, versatile and interoperable support for processing big data of heterogeneous genomic features in order to extract candidate targets for biomedical knowledge discovery. Many provided biological use case <a href="documentation.html" target="documentation">examples</a> on public <a href="https://www.encodeproject.org/" target="ENCODE">ENCODE</a>, <a href="http://www.roadmapepigenomics.org/" target="Roadmap">Roadmap Epigenomics</a> and <a href="http://cancergenome.nih.gov/" target="TCGA">TCGA</a> datasets demonstrate GMQL system relevance.</p>
 
-    </body>
+			<p>An implementation of the GMQL system open for public use at <a href="http://www.gmql.eu/" target="gmql">http://www.gmql.eu/</a> is installed on a cluster at <a href="https://www.cineca.it/en" target="CINECA">CINECA</a>, where it can be freely tested through its Web and REST interfaces. The user manual is available <a href="https://github.com/DEIB-GECO/GMQL-WEB/wiki/web_user_manual" target="web_user_manual">here</a>.</p>
+
+			<p>Full documentation of all GMQL operators and examples of their use are available <a href="documentation.html" target="documentation">here</a>.
+			<br>GMQL System source code and documentation are available <a href="download.html" target="download">here</a>.</p>
+			<br>
+
+			<p>Former version of GMQL is available <a href="..\GMQL\" target="GMQL">here</a>.</p>
+			<br>
+
+
+			<p>GMQL System is supported by the <a href="http://www.bioinformatics.deib.polimi.it/GeCo/?home" target="GeCo">Data-Driven Genomic Computing (GeCo)</a> project, funded by the <a href="https://erc.europa.eu/" target="GeCo">European Research Center (ERC)</a> (Advanced ERC Grant 693174).</p>
+			<br>
+
+			<p id="visit_count"/>
+
+		  </div>
+
+		  <div id="pied"></div>
+		</div>
+		<script type='text/javascript'>makeRequest('/AnalyticsQueryWrapper/AnalyticsServlet');</script>
+
+	</body>
 </html>
