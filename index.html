@@ -86,40 +86,64 @@
                 </ul>
             </div>
             <div id="centre">
-                <h1>GMQL System</h1>
-                <p>The GenoMetric Query Language (GMQL) system is a novel high-throughput computational software for multi-sample integration and processing of big heterogeneous datasets of genomic features and known annotations from Next Generation Sequencing.</p>
+                <!--h1>GMQL System</h1>
+<p>The GenoMetric Query Language (GMQL) system is a novel high-throughput computational software for multi-sample integration and processing of big heterogeneous datasets of genomic features and known annotations from Next Generation Sequencing.</p>
 
-                <p>Meeting efficiency, flexibility and usability requirements, it can operate on large amounts of heterogeneous genomic region data in their usual formats, and can compare billions of genomic regions, mainly on the basis of metric properties but also of arbitrary region attributes and of metadata content, with enhanced accessibility, portability, scalability and performance.</p>
+<p>Meeting efficiency, flexibility and usability requirements, it can operate on large amounts of heterogeneous genomic region data in their usual formats, and can compare billions of genomic regions, mainly on the basis of metric properties but also of arbitrary region attributes and of metadata content, with enhanced accessibility, portability, scalability and performance.</p>
 
-                <p>All its implemented features make the GMQL system an easy-to-use, versatile and interoperable support for processing big data of heterogeneous genomic features in order to extract candidate targets for biomedical knowledge discovery. Many provided biological use case <a href="documentation.html" target="documentation">examples</a> on public <a href="https://www.encodeproject.org/" target="ENCODE">ENCODE</a>, <a href="http://www.roadmapepigenomics.org/" target="Roadmap">Roadmap Epigenomics</a> and <a href="http://cancergenome.nih.gov/" target="TCGA">TCGA</a> datasets demonstrate GMQL system relevance.</p>
+<p>All its implemented features make the GMQL system an easy-to-use, versatile and interoperable support for processing big data of heterogeneous genomic features in order to extract candidate targets for biomedical knowledge discovery. Many provided biological use case <a href="documentation.html" target="documentation">examples</a> on public <a href="https://www.encodeproject.org/" target="ENCODE">ENCODE</a>, <a href="http://www.roadmapepigenomics.org/" target="Roadmap">Roadmap Epigenomics</a> and <a href="http://cancergenome.nih.gov/" target="TCGA">TCGA</a> datasets demonstrate GMQL system relevance.</p>
 
-                <!--<p>An implementation of the GMQL system open for public use at <a href="http://www.gmql.eu/" target="gmql">http://www.gmql.eu/</a> is installed on a cluster at <a href="https://www.cineca.it/en" target="CINECA">CINECA</a>, where it can be freely tested through its Web and REST interfaces. The user manual is available <a href="https://github.com/DEIB-GECO/GMQL-WEB/wiki/web_user_manual" target="web_user_manual">here</a>.</p>
--->
+<!--<p>An implementation of the GMQL system open for public use at <a href="http://www.gmql.eu/" target="gmql">http://www.gmql.eu/</a> is installed on a cluster at <a href="https://www.cineca.it/en" target="CINECA">CINECA</a>, where it can be freely tested through its Web and REST interfaces. The user manual is available <a href="https://github.com/DEIB-GECO/GMQL-WEB/wiki/web_user_manual" target="web_user_manual">here</a>.</p-->
 
-                <h2>Federated GMQL</h2>
-                <p><b>Motivation:</b> With the spreading of biological and clinical uses of Next-Generation Sequencing (NGS) data, many laboratories and health organizations are facing the need of sharing NGS data resources, and easily accessing and processing comprehensively shared genomic data; in most cases, primary and secondary analysis of NGS data is done at sequencing stations, and sharing applies to processed data. Based on our previous single-site GMQL system architecture, we present the model, language, and architectural extensions that make our centralized system open to federated computing.</p>
-                <p><b>Results:</b> A well-designed extension of a centralized system architecture to support federated data sharing and query processing. Data is federated thanks to simple data sharing instructions. Queries are assigned to execution nodes; they are translated into an intermediate representation, whose computation drives data and processing distributions. The approach allows writing federated applications according to classical styles: centralized, distributed, or externalized.
+
+                <h1>Federated GMQL</h1>
+                <p>GenoMetric Query Language (GMQL) is a novel query language for multi-sample integration and processing of heterogeneous datasets of genomic features and known annotations. <b>Federated GMQL</b> extends the single-site system to include communicating GMQL servers and supports distributed processing of genomic datasets stored at several federated data sources; the resulting system amplifies the capability of data exploration, sharing and reuse beyond the boundaries of single data centers, and as such is a significant step forward in the development of genomic data managers for supporting modern research and clinical practice, whose players naturally act in federations.
                 </p>
+
+                <br>
 
                 <p>
-                    <b>Supplementary information:</b> see the <a href="documentation.html">documentation page</a>.
+                    From the model point of view, federated datasets are added to public and private datasets, they can be transparently inspected and browsed by any GMQL system provided with suitable access authorizations, resulting from simple bilateral and multilateral agreements between administrators; from the language point of view, minimal syntactic additions turn single-system queries into federated queries, and default query allocation policies are provided that automatically produce operation allocation with no change to single-system query expression; from the software point of view, both GMQL servers and the new name server for coordinating data repositories  can be easily installed and initialized (also using docker technology).
                 </p>
+
                 <br>
 
-                <p><a href="http://geco.deib.polimi.it/demo-login/" target="_blank" style="padding: 7px; background-color: #3882c7; border: 1px solid black; color:white;">Try Demo</a></p>
-                
+                <p>
+                    Federated GMQL technology includes software solutions for managing distributed naming and access protocols, query splitting, distributed logging, query distribution and data protection policies. Federated GMQL is an autonomous software freely available for non-commercial use as an open source project, under Apache License 2.0 in the GitHub platform.
+                </p>
+
                 <br>
+
+                <!--p>
+                    <b>Supplementary information:</b> see the <a href="documentation.html">documentation page</a>.
+                </p-->
 
                 <p>Full documentation of all GMQL operators and examples of their use are available <a href="documentation.html">here</a>.
                     <br>GMQL System source code and documentation are available <a href="download.html">here</a>.</p>
                 <br>
 
-                <p>Former version of GMQL is available <a href="http://www.bioinformatics.deib.polimi.it/GMQLSystem/" target="GMQL">here</a>.</p>
+                <p>Single-site version of GMQL is available <a href="http://www.bioinformatics.deib.polimi.it/GMQLSystem/" target="GMQL">here</a>.</p>
+                
+                <br>
+                
+                
+                <table style="margin-left: 14px; border: 1px solid black;padding: 8px;">
+                    <tr>
+                        <td style="max-width: 750px;">
+                        Federated GMQL web interface with a pre-loaded demo query, executed by first launching COMPILE and then launching EXECUTE; query progression is shown by pressing RUNNING at various times. Execution time depends on the load on our servers, it is expected between 6 and 10 minutes.
+                        </td>
+                    
+                        <td> <a href="http://geco.deib.polimi.it/demo-login/" target="_blank" style="padding: 7px; background-color: #3882c7; border: 1px solid black; color:white;">Try&nbsp;Demo</a>
+                        </td>
+                    </tr>
+                </table>
+                
+
+                
                 <br>
 
 
                 <p>GMQL System is supported by the <a href="http://www.bioinformatics.deib.polimi.it/GeCo/?home" target="GeCo">Data-Driven Genomic Computing (GeCo)</a> project, funded by the <a href="https://erc.europa.eu/" target="GeCo">European Research Center (ERC)</a> (Advanced ERC Grant 693174).</p>
-                <br>
 
 
 
